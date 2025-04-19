@@ -203,7 +203,7 @@ footer {
     <h3>Contact Me</h3>
     <img src="https://cdn-icons-png.flaticon.com/512/4206/4206273.png" alt="contact" class="illustration">
     <p>Email: <a href="mailto:aminul@example.com" style="color:#f9a8d4">aminul@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/aminulshourob" target="_blank" style="color:#f9a8d4">@aminulshourob</a></p>
+    <p>GitHub: <a href="https://github.com/Srb-onnet" target="_blank" style="color:#f9a8d4">@aminulshourob</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/aminulshourob" target="_blank" style="color:#f9a8d4">aminulshourob</a></p>
   </section>  <footer>
     &copy; 2025 Aminul Haque Shourob. Crafted with care.
