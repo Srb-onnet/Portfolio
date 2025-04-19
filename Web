@@ -11,7 +11,7 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }body {
-  background: #11131a;
+  background: #0f1116;
   color: #e0e0e0;
   line-height: 1.6;
   overflow-x: hidden;
@@ -19,21 +19,24 @@
 
 header {
   background: #1a1d25;
-  padding: 2rem 4rem;
+  padding: 1.5rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #f9a8d4;
 }
 
 nav a {
   color: #cbd5e1;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -44,17 +47,19 @@ nav a:hover {
 }
 
 section {
-  padding: 4rem;
+  padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
 
 .hero {
   text-align: center;
+  padding-top: 3rem;
+  animation: fadeIn 1.2s ease-in;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: 1rem;
   color: #fbcfe8;
 }
@@ -75,29 +80,52 @@ section {
   font-weight: 600;
   cursor: pointer;
   margin-top: 2rem;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background: #f9a8d4;
+  transform: scale(1.05);
 }
 
 .projects, .about, .contact {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .projects h3, .about h3, .contact h3 {
   color: #fbcfe8;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .project-card {
   background: #1f2937;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.05);
+}
+
+.project-card h4 {
+  color: #f9a8d4;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #cbd5e1;
+}
+
+.contact p {
+  text-align: center;
+  margin: 0.5rem 0;
 }
 
 footer {
@@ -106,6 +134,11 @@ footer {
   background: #1a1d25;
   color: #71717a;
   font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
   </style>
@@ -124,7 +157,7 @@ footer {
     <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
   </section>  <section class="about" id="about">
     <h3>About Me</h3>
-    <p>
+    <p style="text-align:center; max-width: 800px; margin: auto; color: #cbd5e1;">
       I'm a Bangladeshi full stack developer who blends aesthetic UI with solid backend logic. From small startups to growing businesses, I've helped people build websites that are clean, functional, and joyful to use. I specialize in JavaScript, React, Node.js, Express, MongoDB, and love learning new tools.
     </p>
   </section>  <section class="projects" id="projects">
@@ -149,7 +182,6 @@ footer {
   </section>  <footer>
     &copy; 2025 Aminul Haque Shourob. Crafted with care.
   </footer>  <script>
-    // Smooth scroll is already added in the button
     console.log("Portfolio loaded for Aminul Haque Shourob");
   </script></body>
 </html>
