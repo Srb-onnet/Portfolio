@@ -11,14 +11,19 @@
       box-sizing: border-box;
     }body {
   font-family: 'Orbitron', 'Inter', sans-serif;
-  background: radial-gradient(circle at center, #0c0d11 0%, #0b0c10 60%, #050509 100%);
+  background-color: #0b0c10;
   color: #c0d0e0;
   overflow-x: hidden;
-  background-image: url('https://images.unsplash.com/photo-1603902363128-27f3d7a8d4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+}
+
+.bg-art {
+  background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 section {
@@ -33,7 +38,6 @@ section {
 
 .hero {
   text-align: center;
-  padding-top: 3rem;
   animation: fadeInUp 1.5s ease-out;
 }
 
@@ -125,12 +129,15 @@ h3 {
 
 footer {
   text-align: center;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.9);
-  color: #666f7a;
-  font-size: 0.9rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(145deg, #0a0b0e, #101217);
+  color: #9eaab5;
+  font-size: 0.95rem;
   font-style: italic;
   text-shadow: 0 0 2px rgba(255,255,255,0.05);
+  border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+  margin-top: 6rem;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.4);
 }
 
 .illustration {
@@ -170,12 +177,14 @@ footer {
   </style>
 </head>
 <body>
-  <section class="hero">
-    <img src="https://cdn-icons-png.flaticon.com/512/3017/3017511.png" alt="space icon" class="illustration">
-    <h2>Hi, I'm Aminul</h2>
-    <p>A full stack web developer with 4 years of experience, passionate about creating immersive web experiences that feel like a dream within a dream.</p>
-    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
-  </section>  <section class="about" id="about">
+  <div class="bg-art">
+    <section class="hero">
+      <img src="https://cdn-icons-png.flaticon.com/512/3017/3017511.png" alt="space icon" class="illustration">
+      <h2>Hi, I'm Aminul</h2>
+      <p>A full stack web developer with 4 years of experience, passionate about creating immersive web experiences that feel like a dream within a dream.</p>
+      <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
+    </section>
+  </div>  <section class="about" id="about">
     <h3>About Me</h3>
     <p style="text-align:center; max-width: 800px; margin: auto; color: #aac8e5; line-height: 1.6;">
       I'm a digital architect inspired by the multilayered storytelling of <em>Inception</em>. My goal is to craft digital dreams using technologies like JavaScript, React, Node.js, and more—blending aesthetics, logic, and immersive UI into a cinematic journey.
