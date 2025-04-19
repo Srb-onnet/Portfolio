@@ -96,7 +96,45 @@
     }
     .floating {
       animation: float 4s ease-in-out infinite;
-    }
+    }/* Slider Styles */
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 500%;
+}
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 2rem;
+  background: #1a1a1a;
+  color: var(--text-color);
+  text-align: center;
+}
+.slide h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+.slider-nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+.slider-nav button {
+  background: var(--accent-color);
+  border: none;
+  margin: 0 5px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
@@ -112,10 +150,22 @@
     <p>With 4 years of experience building immersive full stack applications, I craft dreams within dreams—using React, Node.js, and cutting-edge tech to deliver next-gen web experiences.</p>
   </section>  <section id="projects" class="section">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>DreamVerse:</strong> A portfolio site inspired by the layered beauty of Inception.</li>
-      <li><strong>InceptCommerce:</strong> A sleek eCommerce solution with a noir twist.</li>
-    </ul>
+    <div class="slider-container">
+      <div class="slides" id="slider">
+        <div class="slide"><h4>DreamVerse</h4><p>A portfolio site inspired by Inception's layers.</p></div>
+        <div class="slide"><h4>InceptCommerce</h4><p>Noir-themed online store built with MERN stack.</p></div>
+        <div class="slide"><h4>OrbitUI</h4><p>Stylish component library for modern UIs.</p></div>
+        <div class="slide"><h4>CodeChronicles</h4><p>Minimalist blog and publishing platform for devs.</p></div>
+        <div class="slide"><h4>DreamSync</h4><p>Task management app with dreamy animations.</p></div>
+      </div>
+      <div class="slider-nav">
+        <button onclick="slideTo(0)"></button>
+        <button onclick="slideTo(1)"></button>
+        <button onclick="slideTo(2)"></button>
+        <button onclick="slideTo(3)"></button>
+        <button onclick="slideTo(4)"></button>
+      </div>
+    </div>
   </section>  <section id="contact" class="section">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:aminul@example.com">aminul@example.com</a></p>
@@ -123,6 +173,10 @@
     <p>LinkedIn: <a href="https://linkedin.com/in/aminulshourob" target="_blank">aminulshourob</a></p>
   </section>  <footer>
     &copy; 2025 Aminul Haque Shourob — "You're waiting for a dream. A coded dream."
-  </footer>
-</body>
+  </footer>  <script>
+    function slideTo(index) {
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+  </script></body>
 </html>
