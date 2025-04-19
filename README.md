@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,14 +11,14 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }body {
-  background: #0f1116;
+  background: linear-gradient(145deg, #0f1116, #1a1d25);
   color: #e0e0e0;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 header {
-  background: #1a1d25;
+  background: rgba(26, 29, 37, 0.95);
   padding: 1.5rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -27,11 +27,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  animation: slideDown 1s ease-out;
 }
 
 header h1 {
   font-size: 1.8rem;
   color: #f9a8d4;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 nav a {
@@ -39,11 +41,13 @@ nav a {
   margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
+  animation: fadeIn 2s ease-in-out;
 }
 
 nav a:hover {
   color: #f9a8d4;
+  transform: scale(1.05);
 }
 
 section {
@@ -55,13 +59,14 @@ section {
 .hero {
   text-align: center;
   padding-top: 3rem;
-  animation: fadeIn 1.2s ease-in;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 .hero h2 {
   font-size: 2.75rem;
   margin-bottom: 1rem;
   color: #fbcfe8;
+  animation: flicker 3s infinite alternate;
 }
 
 .hero p {
@@ -81,15 +86,17 @@ section {
   cursor: pointer;
   margin-top: 2rem;
   transition: background 0.3s, transform 0.3s;
+  animation: pulse 2s infinite;
 }
 
 .btn:hover {
   background: #f9a8d4;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .projects, .about, .contact {
   margin-top: 4rem;
+  animation: fadeIn 2s ease-in forwards;
 }
 
 .projects h3, .about h3, .contact h3 {
@@ -97,6 +104,7 @@ section {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 .project-card {
@@ -105,12 +113,13 @@ section {
   border-radius: 1rem;
   margin-bottom: 2rem;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  animation: slideUp 1s ease-out;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.05);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.07);
 }
 
 .project-card h4 {
@@ -134,11 +143,39 @@ footer {
   background: #1a1d25;
   color: #71717a;
   font-size: 0.9rem;
+  animation: fadeInUp 1.5s ease-out;
 }
 
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 
   </style>
@@ -182,6 +219,22 @@ footer {
   </section>  <footer>
     &copy; 2025 Aminul Haque Shourob. Crafted with care.
   </footer>  <script>
-    console.log("Portfolio loaded for Aminul Haque Shourob");
+    // Scroll reveal effect
+    const sections = document.querySelectorAll("section");
+    const options = {
+      threshold: 0.1
+    };
+
+    const reveal = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    sections.forEach(section => {
+      reveal.observe(section);
+    });
   </script></body>
 </html>
