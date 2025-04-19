@@ -1,182 +1,62 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #0a0a0a;
-      --text-color: #d1d1d1;
-      --accent-color: #00bcd4;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    header, section, footer {
-      padding: 3rem 2rem;
-      animation: fadeIn 1.5s ease-in;
-    }
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent-color);
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      font-weight: 600;
-    }
-    nav a {
-      color: var(--accent-color);
-      text-decoration: none;
-      transition: transform 0.3s;
-    }
-    nav a:hover {
-      transform: scale(1.1);
-    }
-    .hero {
-      background: url('https://wallpaperaccess.com/full/2203127.jpg') center/cover no-repeat;
-      text-align: center;
-      padding: 10rem 2rem;
-      color: #fff;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.25rem;
-    }
-    .section {
-      margin: 4rem 0;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--accent-color);
-      color: #000;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #008c9e;
-    }
-    footer {
-      background: #111;
-      color: #999;
-      padding: 2rem;
-      text-align: center;
-      border-radius: 50% 50% 0 0 / 20% 20% 0 0;
-      margin-top: 5rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-    .floating {
-      animation: float 4s ease-in-out infinite;
-    }/* Slider Styles */
-.slider-container {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 20px;
-}
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 500%;
-}
-.slide {
-  width: 100%;
-  flex-shrink: 0;
-  padding: 2rem;
-  background: #1a1a1a;
-  color: var(--text-color);
-  text-align: center;
-}
-.slide h4 {
-  color: var(--accent-color);
-  margin-bottom: 0.5rem;
-}
-.slider-nav {
-  text-align: center;
-  margin-top: 1rem;
-}
-.slider-nav button {
-  background: var(--accent-color);
-  border: none;
-  margin: 0 5px;
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aminul Haque Shourob | Cinematic Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>  <section class="hero floating">
-    <h1>Hi, I'm Aminul Haque Shourob</h1>
-    <p>Full Stack Developer | Dream Architect | Code Inceptionist</p>
+  <div id="particles-js"></div>
+  <header>
+    <nav>
+      <h1 class="logo">MyPortfolio</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="darkModeToggle">Toggle</button>
+    </nav>
+  </header>  <section id="home" class="section parallax">
+    <div class="content">
+      <h2>Welcome to My Dreamscape</h2>
+      <p>Cinematic, futuristic, and minimalist</p>
+    </div>
   </section>  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>With 4 years of experience building immersive full stack applications, I craft dreams within dreams—using React, Node.js, and cutting-edge tech to deliver next-gen web experiences.</p>
+    <p>I'm Aminul Haque Shourob, a web developer with 4 years of experience. I specialize in creating immersive digital experiences that blend mystery with minimalism, inspired by the complexity and elegance of Inception.</p>
   </section>  <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="slider-container">
-      <div class="slides" id="slider">
-        <div class="slide"><h4>DreamVerse</h4><p>A portfolio site inspired by Inception's layers.</p></div>
-        <div class="slide"><h4>InceptCommerce</h4><p>Noir-themed online store built with MERN stack.</p></div>
-        <div class="slide"><h4>OrbitUI</h4><p>Stylish component library for modern UIs.</p></div>
-        <div class="slide"><h4>CodeChronicles</h4><p>Minimalist blog and publishing platform for devs.</p></div>
-        <div class="slide"><h4>DreamSync</h4><p>Task management app with dreamy animations.</p></div>
-      </div>
-      <div class="slider-nav">
-        <button onclick="slideTo(0)"></button>
-        <button onclick="slideTo(1)"></button>
-        <button onclick="slideTo(2)"></button>
-        <button onclick="slideTo(3)"></button>
-        <button onclick="slideTo(4)"></button>
-      </div>
+    <div class="projects-container">
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
     </div>
+  </section>  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Three.js</li>
+    </ul>
+  </section>  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <a href="resume.pdf" download class="btn">Download PDF</a>
   </section>  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:aminul@example.com">aminul@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/aminulshourob" target="_blank">@aminulshourob</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/aminulshourob" target="_blank">aminulshourob</a></p>
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Your message"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>  <footer>
-    &copy; 2025 Aminul Haque Shourob — "You're waiting for a dream. A coded dream."
-  </footer>  <script>
-    function slideTo(index) {
-      const slider = document.getElementById('slider');
-      slider.style.transform = `translateX(-${index * 100}%)`;
-    }
-  </script></body>
+    <p>&copy; 2025 Aminul Haque Shourob. Dream a little bigger.</p>
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script></body>
 </html>
