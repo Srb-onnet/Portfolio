@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Haque Shourob | Portfolio</title>
+  <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -15,39 +15,9 @@
   color: #e0e0e0;
   line-height: 1.6;
   overflow-x: hidden;
-}
-
-header {
-  background: rgba(26, 29, 37, 0.95);
-  padding: 1.5rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  animation: slideDown 1s ease-out;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  color: #f9a8d4;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-nav a {
-  color: #cbd5e1;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s, transform 0.3s;
-  animation: fadeIn 2s ease-in-out;
-}
-
-nav a:hover {
-  color: #f9a8d4;
-  transform: scale(1.05);
+  background-image: radial-gradient(circle at 20% 30%, rgba(255,192,203,0.05), transparent 60%),
+                    radial-gradient(circle at 80% 70%, rgba(255,182,193,0.05), transparent 60%);
+  animation: backgroundFloat 30s infinite alternate;
 }
 
 section {
@@ -60,6 +30,7 @@ section {
   text-align: center;
   padding-top: 3rem;
   animation: fadeInUp 1.5s ease-out;
+  position: relative;
 }
 
 .hero h2 {
@@ -87,6 +58,7 @@ section {
   margin-top: 2rem;
   transition: background 0.3s, transform 0.3s;
   animation: pulse 2s infinite;
+  box-shadow: 0 0 20px #f9a8d4;
 }
 
 .btn:hover {
@@ -105,6 +77,14 @@ section {
   margin-bottom: 1rem;
   text-align: center;
   animation: fadeInUp 1.5s ease-out;
+  position: relative;
+}
+
+.projects h3::before, .about h3::before, .contact h3::before {
+  content: '✨';
+  position: absolute;
+  left: -25px;
+  animation: twinkle 1.5s infinite;
 }
 
 .project-card {
@@ -114,7 +94,7 @@ section {
   margin-bottom: 2rem;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
   transition: transform 0.5s, box-shadow 0.5s;
-  animation: slideUp 1s ease-out;
+  animation: floatCard 3s ease-in-out infinite alternate;
 }
 
 .project-card:hover {
@@ -146,6 +126,13 @@ footer {
   animation: fadeInUp 1.5s ease-out;
 }
 
+.illustration {
+  width: 120px;
+  margin: 1rem auto;
+  display: block;
+  animation: floatCard 6s infinite alternate ease-in-out;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -155,16 +142,6 @@ footer {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(100px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -178,27 +155,38 @@ footer {
   100% { opacity: 1; }
 }
 
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+@keyframes floatCard {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes backgroundFloat {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>Aminul Haque Shourob</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <section class="hero">
+  <section class="hero">
+    <img src="https://cdn-icons-png.flaticon.com/512/3468/3468379.png" alt="cute star" class="illustration">
     <h2>Hi, I'm Aminul</h2>
     <p>A full stack web developer with 4 years of experience, passionate about crafting beautiful and performant web applications with love and care.</p>
     <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
   </section>  <section class="about" id="about">
     <h3>About Me</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="about" class="illustration">
     <p style="text-align:center; max-width: 800px; margin: auto; color: #cbd5e1;">
       I'm a Bangladeshi full stack developer who blends aesthetic UI with solid backend logic. From small startups to growing businesses, I've helped people build websites that are clean, functional, and joyful to use. I specialize in JavaScript, React, Node.js, Express, MongoDB, and love learning new tools.
     </p>
   </section>  <section class="projects" id="projects">
     <h3>Featured Projects</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/857/857681.png" alt="projects" class="illustration">
     <div class="project-card">
       <h4>Sweetify - E-commerce Platform</h4>
       <p>A full-stack shopping platform for cute and sweet things. React, Node, MongoDB.</p>
@@ -213,28 +201,12 @@ footer {
     </div>
   </section>  <section class="contact" id="contact">
     <h3>Contact Me</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/4206/4206273.png" alt="contact" class="illustration">
     <p>Email: <a href="mailto:aminul@example.com" style="color:#f9a8d4">aminul@example.com</a></p>
     <p>GitHub: <a href="https://github.com/aminulshourob" target="_blank" style="color:#f9a8d4">@aminulshourob</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/aminulshourob" target="_blank" style="color:#f9a8d4">aminulshourob</a></p>
   </section>  <footer>
     &copy; 2025 Aminul Haque Shourob. Crafted with care.
-  </footer>  <script>
-    // Scroll reveal effect
-    const sections = document.querySelectorAll("section");
-    const options = {
-      threshold: 0.1
-    };
-
-    const reveal = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    }, options);
-
-    sections.forEach(section => {
-      reveal.observe(section);
-    });
-  </script></body>
+  </footer>
+</body>
 </html>
