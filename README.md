@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SRB</title>
+  <title>DreamSpace - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -22,7 +22,17 @@
   </style>
 </head>
 <body class="relative overflow-x-hidden">
-  <div class="stars fixed w-full h-full top-0 left-0 opacity-20 z-0"></div>  <!-- Hero Section -->  <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10">
+  <div class="stars fixed w-full h-full top-0 left-0 opacity-20 z-0"></div>  <!-- Navigation -->  <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md text-blue-100 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+      <span class="text-xl font-bold">DreamSpace</span>
+      <div class="space-x-4 text-sm md:text-base">
+        <a href="#about" class="hover:text-purple-300 transition">About</a>
+        <a href="#projects" class="hover:text-purple-300 transition">Projects</a>
+        <a href="#skills" class="hover:text-purple-300 transition">Skills</a>
+        <a href="#contact" class="hover:text-purple-300 transition">Contact</a>
+      </div>
+    </div>
+  </nav>  <!-- Hero Section -->  <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 pt-20">
     <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-fade-in-up">SRB</h1>
     <p class="mt-4 text-xl text-blue-200 animate-fade-in">Dream Weaver | Code Alchemist</p>
   </section>  <!-- About Section -->  <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center">
@@ -60,10 +70,16 @@
       <textarea rows="4" placeholder="Message" class="w-full p-3 rounded bg-indigo-950 text-white placeholder-blue-300"></textarea>
       <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-2 rounded-full text-white">Send Message</button>
     </form>
-    <div class="mt-6 text-blue-300">
-      <a href="#" class="mx-2 hover:text-white">Twitter</a>
-      <a href="#" class="mx-2 hover:text-white">GitHub</a>
-      <a href="#" class="mx-2 hover:text-white">LinkedIn</a>
+    <div class="mt-8 flex justify-center space-x-6 text-blue-300">
+      <a href="#" class="transform hover:scale-125 transition duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="w-6 h-6"/>
+      </a>
+      <a href="#" class="transform hover:scale-125 transition duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="w-6 h-6"/>
+      </a>
+      <a href="#" class="transform hover:scale-125 transition duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" class="w-6 h-6"/>
+      </a>
     </div>
   </section>  <!-- Optional Background Sound -->  <audio id="bg-audio" autoplay loop volume="0.2">
     <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_2b52f82324.mp3" type="audio/mpeg">
