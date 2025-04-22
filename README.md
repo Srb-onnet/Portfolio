@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DreamSpace - Portfolio</title>
+  <title>SRB - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -22,17 +22,18 @@
   </style>
 </head>
 <body class="relative overflow-x-hidden">
-  <div class="stars fixed w-full h-full top-0 left-0 opacity-20 z-0"></div>  <!-- Navigation -->  <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md text-blue-100 py-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
-      <span class="text-xl font-bold">DreamSpace</span>
-      <div class="space-x-4 text-sm md:text-base">
-        <a href="#about" class="hover:text-purple-300 transition">About</a>
-        <a href="#projects" class="hover:text-purple-300 transition">Projects</a>
-        <a href="#skills" class="hover:text-purple-300 transition">Skills</a>
-        <a href="#contact" class="hover:text-purple-300 transition">Contact</a>
+  <div class="stars fixed w-full h-full top-0 left-0 opacity-20 z-0"></div>  <!-- Navigation -->  <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md text-blue-100 py-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center px-6">
+      <span class="text-xl font-bold">SRB</span>
+      <div class="flex flex-wrap gap-4 mt-2 md:mt-0">
+        <a href="#about" class="px-3 py-1 rounded hover:bg-purple-800 transition">About</a>
+        <a href="#projects" class="px-3 py-1 rounded hover:bg-purple-800 transition">Projects</a>
+        <a href="#skills" class="px-3 py-1 rounded hover:bg-purple-800 transition">Skills</a>
+        <a href="#contact" class="px-3 py-1 rounded hover:bg-purple-800 transition">Contact</a>
       </div>
     </div>
-  </nav>  <!-- Hero Section -->  <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 pt-20">
+  </nav>  <!-- Hero Section -->  <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 pt-28">
+    <img src="https://raw.githubusercontent.com/Srb-onnet/Portfolio/refs/heads/main/file_000000009a5851f7b14ae983afcde4ee_conversation_id%3D67e7ede7-2434-8006-8ad0-89871641ee4d%26message_id%3D4a5735a3-737c-4fca-96ee-3f9677e0b8ad.webp" alt="SRB" class="w-32 h-32 rounded-full border-4 border-purple-500 mb-6 shadow-lg" />
     <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-fade-in-up">SRB</h1>
     <p class="mt-4 text-xl text-blue-200 animate-fade-in">Dream Weaver | Code Alchemist</p>
   </section>  <!-- About Section -->  <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center">
@@ -61,6 +62,10 @@
       <div class="w-24 h-24 rounded-full border-4 border-blue-500 flex items-center justify-center text-blue-200">HTML</div>
       <div class="w-24 h-24 rounded-full border-4 border-purple-500 flex items-center justify-center text-purple-200">CSS</div>
       <div class="w-24 h-24 rounded-full border-4 border-indigo-500 flex items-center justify-center text-indigo-200">JS</div>
+      <div class="w-24 h-24 rounded-full border-4 border-yellow-500 flex items-center justify-center text-yellow-200">Python</div>
+      <div class="w-24 h-24 rounded-full border-4 border-red-500 flex items-center justify-center text-red-200">C</div>
+      <div class="w-24 h-24 rounded-full border-4 border-pink-500 flex items-center justify-center text-pink-200">C++</div>
+      <div class="w-24 h-24 rounded-full border-4 border-green-500 flex items-center justify-center text-green-200">SQL</div>
     </div>
   </section>  <!-- Contact Section -->  <section id="contact" class="py-20 px-6 bg-black text-center">
     <h2 class="text-3xl text-purple-300 mb-6">Contact Me</h2>
@@ -81,7 +86,9 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" class="w-6 h-6"/>
       </a>
     </div>
-  </section>  <!-- Optional Background Sound -->  <audio id="bg-audio" autoplay loop volume="0.2">
+  </section>  <!-- Footer -->  <footer class="py-6 text-center text-sm text-blue-400 bg-black/50 mt-10">
+    &copy; SRB 2025. All rights reserved.
+  </footer>  <!-- Optional Background Sound -->  <audio id="bg-audio" autoplay loop volume="0.2">
     <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_2b52f82324.mp3" type="audio/mpeg">
   </audio>
 </body>
